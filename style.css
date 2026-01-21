@@ -1,0 +1,32 @@
+body {
+    background-color: #2f2f2f;
+    display: flex;
+    padding-top: 150px;
+    justify-content: center;
+}
+
+#calculator {
+    background-color: black;
+    padding: 10px;
+    display: flex;
+}
+
+button {
+    border: none;
+    height: 50px;
+    width: 50px;
+    margin: 3px;
+    border-radius: 50px;
+}
+
+#numbers button {
+    background-color: #2f2f2f;
+}
+
+#operations button {
+    background-color: #f59203;
+}
+
+#editTools button {
+    background-color: #a6a6a6;
+}
