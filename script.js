@@ -55,7 +55,7 @@ operations.addEventListener("click", (event) => {
         handleOperation(subtract, "-");
     } else if (id === "multiply") {
         handleOperation(product, "×")
-    } else {
+    } else if (id === "divide") {
         handleOperation(division, "÷");
     }
 });
