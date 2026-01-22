@@ -8,8 +8,8 @@ body {
 }
 
 #display {
-    height: 65px;
-    width: 225px;
+    height: 70px;
+    width: 275px;
     background-color: black;
     color: whitesmoke;
     text-align: right;
@@ -21,16 +21,16 @@ body {
     background-color: black;
     padding: 10px;
     display: flex;
-    flex-basis: 225px;
+    flex-basis: 275px;
     flex-direction: column;
-    border-radius: 15px;
+    border-radius: 20px;
 
 }
 
 button {
     border: none;
-    height: 50px;
-    width: 50px;
+    height: 62px;
+    width: 62px;
     margin: 3px;
     border-radius: 50px;
     color: white;
@@ -38,12 +38,12 @@ button {
 
 #numbers button {
     background-color: #2f2f2f;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 #operations button {
     background-color: #f59203;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 #editTools button {
