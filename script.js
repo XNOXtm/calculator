@@ -25,11 +25,18 @@ numbers.addEventListener("click", (event) => {
 
     const digit = event.target.textContent;
 
+    let current = isSecondNumber ? number2 : number1;
+
+    if (digit === "." && current.includes(".")) return;
+    if (digit === "." && current === "") current = "0";
+
+    current += digit;
+
     if (!isSecondNumber) {
-        number1 += digit;
+        number1 = current;
         updateDisplay(number1);
     } else {
-        number2 += digit;
+        number2 = current;
         updateDisplay(number2);
     }
 });
@@ -74,7 +81,11 @@ equal.addEventListener("click", () => {
     if (number2 === "" || currentOperation === null) return;
 
     result = operate(currentOperation, Number(number1), Number(number2));
-    updateDisplay(result)
+    if (Number(result)){
+        updateDisplay(result)
+    } else {
+        updateDisplay("Error")
+    }
 
     number1 = result;
     number2 = "";
@@ -96,8 +107,21 @@ backspace.addEventListener("click", () => {
 document.addEventListener("keydown", (e) => {
     // console.log(e.key);
     const key = e.key;
-    if (Number(key)) {
-        console.log("you pressed a num")
+    if (key >= 0 || key <= 9 || key === ".") {
+        let current = isSecondNumber ? number2 : number1;
+
+        if (key === "." && current.includes(".")) return;
+        if (key === "." && current === "") current = "0";
+
+        current += key;
+
+        if (!isSecondNumber) {
+        number1 = key;
+        updateDisplay(number1);
+        } else {
+        number2 = key;
+        updateDisplay(number2);
+        }
     } else if (key === "+") {
         handleOperation(add, "+");
     } else if (key === "-") {
@@ -106,22 +130,11 @@ document.addEventListener("keydown", (e) => {
         handleOperation(product, "×")
     } else if (key === "/") {
         handleOperation(division, "÷");
-    } else if (key === "Enter") {
-        console.log("you pressed Enter");
-        if (number2 === "" || currentOperation === null) return;
-
-        result = operate(currentOperation, Number(number1), Number(number2));
-        updateDisplay(result)
-
-        number1 = result;
-        number2 = "";
-        isSecondNumber = false;
-        currentOperation = null;
     } else if (key === "Backspace") {
         console.log("you pressed backspace");
         if (!isSecondNumber) {
-        number1 = number1.slice(0, -1);
-        updateDisplay(number1);
+            number1 = number1.slice(0, -1);
+            updateDisplay(number1);
         } else {
             number2 = number2.slice(0, -1);
             updateDisplay(number2);
@@ -129,9 +142,20 @@ document.addEventListener("keydown", (e) => {
     } else if (key === "Escape") {
         console.log("you pressed Escape");
         updateDisplay("");
-
+        
         number1 = "";
         number2 = "";
+        currentOperation = null;
+    } else if (key === "Enter") {
+        console.log("you pressed Enter");
+        if (number2 === "" || currentOperation === null) return;
+    
+        result = operate(currentOperation, Number(number1), Number(number2));
+        updateDisplay(result)
+    
+        number1 = result;
+        number2 = "";
+        isSecondNumber = false;
         currentOperation = null;
     }
 
