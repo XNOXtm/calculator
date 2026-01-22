@@ -6,8 +6,8 @@ body {
 }
 
 #display {
-    width: 250px;
     height: 75px;
+    width: 225px;
     background-color: black;
     color: whitesmoke;
     text-align: left;
@@ -19,7 +19,7 @@ body {
     background-color: black;
     padding: 10px;
     display: flex;
-    flex-basis: 250px;
+    flex-basis: 225px;
     display: flex;
     flex-direction: column;
     
@@ -36,22 +36,16 @@ button {
 
 #numbers button {
     background-color: #2f2f2f;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #operations button {
     background-color: #f59203;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 #editTools button {
     background-color: #a6a6a6;
-}
-
-
-
-#rightSide {
-    display: flex;
 }
 
 #bottom {
@@ -61,4 +55,13 @@ button {
 #operations  {
     display: flex;
     flex-direction: column;
+}
+
+#editTools {
+    display: flex;
+}
+
+#numbers {
+    display: flex;
+    flex-wrap: wrap;
 }
