@@ -116,10 +116,10 @@ document.addEventListener("keydown", (e) => {
         current += key;
 
         if (!isSecondNumber) {
-        number1 = key;
+        number1 = current;
         updateDisplay(number1);
         } else {
-        number2 = key;
+        number2 = current;
         updateDisplay(number2);
         }
     } else if (key === "+") {
