@@ -34,20 +34,39 @@ button {
     margin: 3px;
     border-radius: 50px;
     color: white;
+    cursor: pointer;
 }
 
 #numbers button {
     background-color: #2f2f2f;
     font-size: 30px;
 }
+#numbers button:hover {
+    background-color: #2f2f2fcd;
+}
+#numbers button:active {
+    background-color: #3c3c3c;
+}
 
 #operations button {
     background-color: #f59203;
     font-size: 35px;
 }
+#operations button:hover {
+    background-color: #f59003e7;
+}
+#operations button:active {
+    background-color: #ed900e;
+}
 
 #editTools button {
     background-color: #a6a6a6;
+}
+#editTools button:hover {
+    background-color: #a6a6a6db;
+}
+#editTools button:active {
+    background-color: #b9b8b8db;
 }
 
 #bottom {
